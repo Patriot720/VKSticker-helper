@@ -1,0 +1,67 @@
+function getVkRequestUrl() {
+    let url = "https://oauth.vk.com/authorize?";
+    let data = {
+        client_id: "5792521",
+        v: '5.52',
+        redirect_uri: "https://oauth.vk.com/blank.html",
+        scope: "messages,docs,photos,offline",
+        response_type: "token"
+    };
+    return url + $.param(data);
+}
+function getApiKey(onFail : Function, button?: JQuery) {
+    chrome
+        .storage
+        .local
+        .get('vk_token', (token) => {
+            let vk_token = token['vk_token']
+            if (vk_token && vk_token.length > 10 && vk_token.indexOf("https://oauth.vk.com/") === -1) {
+                if (button) 
+                    button.remove()
+                addListeners(vk_token)
+            } else 
+                onFail()
+        })
+}
+
+function addListeners(apiKey) {
+    chrome
+        .storage
+        .local
+        .get('userDict', (dict) => {
+            var keywords = new KeywordsGetter(dict['userDict']).getHelpersDictionary()
+            var searcher = new Searcher(keywords)
+            var buttonsCreator = new ButtonsCreator()
+            var sender = new Sender(apiKey)
+            var eventListener = new EventListenersSetter(buttonsCreator, searcher, sender, $('.im_editable'))
+            eventListener.setListeners()
+            var oldLocation = location.href;
+            var reg = new RegExp("https://vk.com/im?sel=")
+            setInterval(function () {
+                if (location.href !== oldLocation) {
+                    if (oldLocation.match(reg) === null) {
+                        buttonsContainer = $('<div class="helper"></div>');
+                        $('.im-chat-input--textarea').prepend(buttonsContainer);
+                        eventListener.inputBox = $('.im_editable')
+                        eventListener.setListeners()
+                        // console.log(oldLocation); console.log('dansgame')
+                    }
+                    oldLocation = location.href;
+                }
+            }, 2000)
+        })
+}
+function addApiKeyButton() {
+    var button = $('<a class="helperelement">Get api key<a>')
+    button.on('click', function () {
+        this.innerText = 'close'
+        getApiKey(getApiKeyFromServer, this)
+    })
+    buttonsContainer.append(button)
+}
+function getApiKeyFromServer() {
+    var requestURL = getVkRequestUrl()
+    chrome
+        .runtime
+        .sendMessage({getAccessTokenURL: requestURL})
+}

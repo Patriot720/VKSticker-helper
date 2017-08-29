@@ -1,0 +1,87 @@
+#content {
+    margin: 0 auto;
+    width: 50%
+}
+
+.textbox {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+    height: 30%
+}
+
+#mainbutton {
+    display: block;
+    margin: 0 auto;
+}
+
+.hide {
+    display: none;
+}
+
+.holder {
+    height: 50%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.stickBox {
+    display: block;
+    width: 75%;
+    margin: 0 auto;
+    resize: none;
+}
+
+#standartHelpers #newButton {
+    display: block;
+    margin: 0 auto;
+}
+
+.stickersholder>.sticker {
+    width: 128px;
+    height: 128px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+    margin: 2px;
+}
+
+.graffityholder>.sticker {
+    width: 128px;
+    height: 128px;
+    border: 2px solid lightgray;
+    border-radius: 5px;
+}
+
+.active {
+    background-color: gray;
+}
+
+ul {
+    display: block;
+    margin: 0 auto;
+    width: 75%;
+}
+
+li {
+    height: 30px;
+    width: 75%;
+    background: gray;
+    display: inline-block;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+li:active {
+    box-shadow: 5px solid black;
+    background: gold;
+    transition: 10ms;
+}
+
+h1,
+h2 {
+    text-align: center
+}

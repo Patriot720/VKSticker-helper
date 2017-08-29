@@ -1,0 +1,72 @@
+#helper{
+	/*padding-left:46px;*/
+	/*width:466px;*/
+	margin:0 auto;
+	/* padding-right:44px; */
+}
+.helper{
+	white-space:nowrap;
+	overflow-x:hidden;
+}
+
+/*.helperelement{
+	height: 25px;
+	overflow:hidden;
+	line-height: 25px;
+	vertical-align:center;
+	cursor:pointer;
+	color: #55677d;
+	text-align: center;
+	border:solid 1px #ffbff1;
+	display: inline-block;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 1px;
+	background: rgba(0,0,255,.1) no-repeat fixed center;
+}*/
+.gifelement{
+	display:inline-block;
+	width:auto;
+	height:100px;
+}
+.helperelement{
+	float:right;
+	padding: 0 11px 0 11px;
+	    margin: 1px;
+	height: 25px;
+line-height: 23px;
+background-color: #dae2ea;
+color: #55677d;
+font-size: 12.5px;
+border-radius: 2px;
+cursor: pointer;
+}
+.selected{
+	background: rgba(0,0,0,.1)
+}
+.helperelement:focus{
+	background:rgba(100,100,255,.2);
+
+/*width:100px;*/
+/*height: 100px;*/
+}
+.helperbutton{
+	float:right;
+	font-size: 12.5px;
+    outline: 0;
+    padding: 0;
+    line-height: 1;
+    background: url(/images/icons/im_actions.png?4) -4px -66px;
+    position: relative;
+    display: block;
+    right: 0;
+    opacity: 0.6;
+    width: 12px;
+    height: 12px;
+    z-index: 1;
+    margin-top: 1px;
+}
+.helperimg{
+	position:absolute;
+	top:0px;
+}

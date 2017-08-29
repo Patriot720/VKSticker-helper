@@ -1,0 +1,116 @@
+#helper {
+    /*padding-left:46px;*/
+    /*width:466px;*/
+    margin: 0 auto;
+    /* padding-right:44px; */
+}
+
+.helper {
+    white-space: nowrap;
+    background-color: #3498DB;
+    height: 30px;
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 2px;
+    margin-top: -10px;
+}
+
+.helpButton {
+    cursor: pointer;
+    width: 20px;
+    height: 30px;
+    border-radius: 3px;
+    line-height: 30px;
+    text-align: center;
+    background-color: #2980B9;
+    position: absolute;
+    top: -10px;
+}
+
+.launchButton {
+    width: 100%!important;
+    height: 100%!important;
+    margin: 0!important;
+    line-height: 30px!important;
+    text-align: center!important;
+}
+
+.helpButton p {
+    margin: 0;
+    font-size: 20px;
+    color: #ECF0F1;
+}
+
+
+/*.helperelement{
+	height: 25px;
+	overflow:hidden;
+	line-height: 25px;
+	vertical-align:center;
+	cursor:pointer;
+	color: #55677d;
+	text-align: center;
+	border:solid 1px #ffbff1;
+	display: inline-block;
+    border-radius: 3px;
+    padding: 3px;
+    margin: 1px;
+	background: rgba(0,0,255,.1) no-repeat fixed center;
+}*/
+
+.gifelement {
+    display: inline-block;
+    width: auto;
+    height: 100px;
+}
+
+.helperelement {
+    float: right;
+    display: block;
+    padding: 0 11px 0 11px;
+    margin: 2px 10px 0 0px;
+    height: 30px;
+    line-height: 30px;
+    background-color: #ECF0F1;
+    color: #2C3E50;
+    font-size: 12.5px;
+    border-radius: 3px;
+    box-shadow: 0px 0px 10px -4px inset;
+    cursor: pointer;
+}
+
+.helperelement:first-child {
+    background-color: #E7C9C4;
+}
+
+.selected {
+    background: rgba(0, 0, 0, .1)
+}
+
+.helperelement:focus {
+    background: rgba(100, 100, 255, .2);
+    /*width:100px;*/
+    /*height: 100px;*/
+}
+
+.helperbutton {
+    float: right;
+    font-size: 12.5px;
+    outline: 0;
+    padding: 0;
+    line-height: 1;
+    background: url(/images/icons/im_actions.png?4) -4px -66px;
+    position: relative;
+    display: block;
+    right: 0;
+    opacity: 0.6;
+    width: 12px;
+    height: 12px;
+    z-index: 1;
+    margin-top: 1px;
+}
+
+.helperimg {
+    position: absolute;
+    top: 0px;
+}

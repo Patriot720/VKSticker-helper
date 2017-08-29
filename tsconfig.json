@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "target": "es5",
+        "watch": true,
+        "outFile": "./build/main.js"
+    },
+    "exclude": [
+        "node_modules",
+        "typings/browser",
+        "typings/browser.d.ts",
+        "test.ts",
+        "options.ts",
+        "background.ts",
+        "optionsBackup.ts"
+    ],
+    "compileOnSave": true,
+    "buildOnSave": false,
+    "atom": {
+        "rewriteTsconfig": true,
+        "formatOnSave": true
+    }
+}
